@@ -8,12 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("map")
 public class Mapping {
 
-    @GetMapping("hello?")
+    @GetMapping("hello?")//
     public String healthTest1() {
         return "Mapping ok";
     }
-    @GetMapping("test/*")
+    @GetMapping("test/*") //placeholdr for single path segment
     public String healthTest2() {
         return "Mapping with *";
+    }
+
+    @GetMapping("test/**") //placeholdr for multiple path segment
+    public String healthTest3() {
+        return "Mapping with **";
     }
 }
