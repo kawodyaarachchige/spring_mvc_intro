@@ -24,8 +24,8 @@ public class Mapping {
     public String healthTest3() {
         return "Mapping with **";
     }
-    @PostMapping("/{name}") //path variable
-    public String healthTest4(@PathVariable("name") String name) {
-        return "Path  variable name is: " + name;
+    @PostMapping("/{name}/{id}") //path variable
+    public String healthTest4(@PathVariable("name") String name,@PathVariable("id") int id) {
+        return "Path  variable are: " + name + " and " + id;
     }
 }
