@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class Mapping {
 
     @GetMapping("hello?")
-    public String healthTest() {
+    public String healthTest1() {
         return "Mapping ok";
+    }
+    @GetMapping("test/*")
+    public String healthTest2() {
+        return "Mapping with *";
     }
 }
