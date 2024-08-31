@@ -28,4 +28,9 @@ public class Mapping {
     public String healthTest4(@PathVariable("name") String name,@PathVariable("id") int id) {
         return "Path  variable are: " + name + " and " + id;
     }
+    @PostMapping("/{id:S\\d{4}}") //path variable with regex
+    public String healthTest5(@PathVariable("id") String id) {
+        return "Path variable is : " + id;
+    }
+
 }
