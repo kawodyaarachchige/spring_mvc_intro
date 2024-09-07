@@ -36,5 +36,9 @@ public class Mapping {
     public String helloMapping(@RequestParam("name") String myName,@RequestParam("age") int age) {
         return "request param are: " + myName + " and " + age;
     }
+    @PostMapping(headers = "X-city")
+    public  String CustomHeader(@RequestHeader("X-city") String city) {
+        return "request header is: " + city;
+    }
 
 }
