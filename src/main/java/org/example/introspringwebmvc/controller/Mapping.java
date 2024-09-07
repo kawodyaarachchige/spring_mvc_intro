@@ -1,6 +1,9 @@
 package org.example.introspringwebmvc.controller;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import java.awt.*;
 
 @RestController
 @RequestMapping("map")
@@ -36,9 +39,13 @@ public class Mapping {
     public String helloMapping(@RequestParam("name") String myName,@RequestParam("age") int age) {
         return "request param are: " + myName + " and " + age;
     }
-    @PostMapping(headers = "X-city")
-    public  String CustomHeader(@RequestHeader("X-city") String city) {
-        return "request header is: " + city;
+    @PostMapping(headers = {"X-city" ,"X-country"})
+    public  String CustomHeader(@RequestHeader("X-city") String city,@RequestHeader("X-country") String country) {
+        return "request header is: " + city + " and " + country;
+    }
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String Consumes(@RequestBody String body) {
+        return "request body is: " + body;
     }
 
 }
