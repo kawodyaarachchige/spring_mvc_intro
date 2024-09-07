@@ -32,5 +32,9 @@ public class Mapping {
     public String healthTest5(@PathVariable("id") String id) {
         return "Path variable is : " + id;
     }
+    @PostMapping(params = {"name","age"})
+    public String helloMapping(@RequestParam("name") String myName,@RequestParam("age") int age) {
+        return "request param are: " + myName + " and " + age;
+    }
 
 }
